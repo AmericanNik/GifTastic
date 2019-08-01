@@ -4,10 +4,24 @@ $(document).ready(function(){
 let topics = ['murica','freedom','usa','patriot','america','donald trump', 'hillary clinton','barack obama'];
 let docButtonHolder = $('#buttonHolder');
 let docDisplay = $('#display');
+let userInput = $('#userInput')
+let inputBox = $('#inputBox');
+let userSubmit = $('#userSubmit');
+
 
 console.log(topics);
 
+userSubmit.on('click', function(event){
+  console.log('submitted!');
+  userGives = inputBox.val().trim()
+  topics.push(userGives)
+  inputBox.val('');
+  generateButtons();
+
+});
+
 const generateButtons = function(){
+  $('#buttonHolder').empty();
 
   topics.forEach(function(topic){
 
