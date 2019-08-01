@@ -1,3 +1,28 @@
 html{
   height:100%;
 }
+
+body{
+  text-align: center;
+}
+
+.buttonDisplay button{
+  margin:10px;
+}
+
+.buttonDisplay{
+  background-color: #f4f4f4;
+  padding:20px;
+  width:80%;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+}
+
+.displayBox{
+  width:80%;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}

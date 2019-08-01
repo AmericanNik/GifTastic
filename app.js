@@ -10,7 +10,7 @@ $(document).ready(function() {
 
   userSubmit.on('click', function(event) {
     userGives = inputBox.val().trim()
-    topics.push(userGives)
+    topics.push(userGives);
     inputBox.val('');
     generateButtons();
   });
@@ -18,7 +18,7 @@ $(document).ready(function() {
   const generateButtons = function() {
     $('#buttonHolder').empty();
     topics.forEach(function(topic) {
-      let button = $('<button>').on('click', function() {
+      let button = $('<button>').addClass('btn btn-dark').on('click', function() {
         docDisplay.empty();
         let queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=42Jbadnmd723gU0vIJSYwE3eeyXksAjT&limit=10&rating=g&q=" + topic;
         $.ajax({
@@ -26,8 +26,8 @@ $(document).ready(function() {
           method: "GET"
         }).then(function(response) {
           response.data.forEach(img => {
-            const image = $('<img />').attr('src', img.images.downsized_still.url).on('click', function() {
-              var src = ($(this).attr('src') === img.images.downsized_still.url)
+            let image = $('<img />').attr('src', img.images.downsized_still.url).on('click', function() {
+              let src = ($(this).attr('src') === img.images.downsized_still.url)
                ? img.images.original.url
                : img.images.downsized_still.url;
               $(this).attr('src', src);
